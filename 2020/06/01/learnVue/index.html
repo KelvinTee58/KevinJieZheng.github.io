@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>vue的学习细节 | KZ。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="VUE学习细节小程序封装a  本地模拟返回 可以是用mock.js来进行模拟  Vuex使用 vuex的数据主要用于保存  共享数据 共享数据主要包括了UI的控制数据（如果能使用$emit来发送数据，最好不用vuex中，vuex是最后手段），还有组件间共享的数据。  远程数据 从数据库中拉取的数据，最好的操作是在actions中来取数据，保存到state中。如果使用到远程数据，可以用get获得st">
+<meta name="keywords" content="JavaScript,vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue的学习细节">
+<meta property="og:url" content="http://yoursite.com/2020/06/01/learnVue/index.html">
+<meta property="og:site_name" content="KZ。">
+<meta property="og:description" content="VUE学习细节小程序封装a  本地模拟返回 可以是用mock.js来进行模拟  Vuex使用 vuex的数据主要用于保存  共享数据 共享数据主要包括了UI的控制数据（如果能使用$emit来发送数据，最好不用vuex中，vuex是最后手段），还有组件间共享的数据。  远程数据 从数据库中拉取的数据，最好的操作是在actions中来取数据，保存到state中。如果使用到远程数据，可以用get获得st">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-11-13T01:16:54.150Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue的学习细节">
+<meta name="twitter:description" content="VUE学习细节小程序封装a  本地模拟返回 可以是用mock.js来进行模拟  Vuex使用 vuex的数据主要用于保存  共享数据 共享数据主要包括了UI的控制数据（如果能使用$emit来发送数据，最好不用vuex中，vuex是最后手段），还有组件间共享的数据。  远程数据 从数据库中拉取的数据，最好的操作是在actions中来取数据，保存到state中。如果使用到远程数据，可以用get获得st">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/dist/build.css?1.2.0">
+
+    <script>
+        window.aomori = {
+            
+        }
+    </script>
+
+</head></html>
+
+<body>
+
+  <div class="container">
+  <header class="header">
+    <div class="header-type">
+      
+      <div class="avatar avatar-sm">
+        <img src="/images/avatar2.jpg" alt="KevinZheng">
+      </div>
+      
+      <a href="/">KZ。</a>
+    </div>
+    <div class="header-menu">
+      
+        <a href="/">主页</a>
+      
+        <a href="/archives">档案室</a>
+      
+    </div>
+    
+    <div class="header-menu-mobile">
+      <div class="header-menu-mobile-inner" id="mobile-menu-open">
+        <i class="icon icon-menu"></i>
+      </div>
+    </div>
+  </header>
+
+  <div class="header-menu-mobile-menu">
+    <div class="header-menu-mobile-menu-bg"></div>
+    <div class="header-menu-mobile-menu-wrap">
+      <div class="header-menu-mobile-menu-inner">
+        <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
+          <i class="icon icon-cross"></i>
+        </div>
+        <div class="header-menu-mobile-menu-list">
+          
+            <a href="/">主页</a>
+          
+            <a href="/archives">档案室</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="container">
+    <div class="main">
+      <section class="inner">
+        <section class="inner-main">
+          <div class="post">
+    <article id="post-learnVue" class="article article-type-post" itemscope
+    itemprop="blogPost">
+
+    <div class="article-inner">
+
+        
+
+        
+        <header class="article-header">
+            
+  
+    <h1 class="article-title" itemprop="name">
+      vue的学习细节
+    </h1>
+  
+
+        </header>
+        
+
+        <div class="article-more-info article-more-info-post hairline">
+            <div class="article-date">
+  <time datetime="2020-06-01T03:50:44.000Z" itemprop="datePublished">2020-06-01</time>
+</div>
+            
+            <div class="article-category">
+                <a class="article-category-link" href="/categories/vue/">vue</a>
+            </div>
+            
+            
+            <div class="article-tag">
+                <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+            </div>
+            
+        </div>
+
+        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
+            <h1 id="VUE学习细节"><a href="#VUE学习细节" class="headerlink" title="VUE学习细节"></a>VUE学习细节</h1><p>小程序封装a</p>
+<ul>
+<li><p>本地模拟返回</p>
+<p>可以是用mock.js来进行模拟</p>
+</li>
+<li><p>Vuex使用</p>
+<p>vuex的数据主要用于保存</p>
+<ol>
+<li><p>共享数据</p>
+<p><strong>共享数据</strong>主要包括了UI的控制数据（如果能使用$emit来发送数据，最好不用vuex中，vuex是最后手段），还有组件间<strong>共享的数据</strong>。</p>
+</li>
+<li><p>远程数据</p>
+<p>从数据库中拉取的数据，最好的操作是在actions中来取数据，保存到state中。如果使用到远程数据，可以用get获得state中的数据。</p>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p>mapActions</p>
+<p>在methods中使用vuex的 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...mapActions(<span class="string">'user'</span>,[<span class="string">"login"</span>,<span class="string">"logout"</span>]),</span><br></pre></td></tr></table></figure>
+
+<p>是将vuex中user命名空间下的login和logout的action映射到methods中，调用login/logout方法等同于调用actions中同名的方法（可以自定义名称）</p>
+<p><em>注：效果等同于将user文件下action方法映射到使用的methods中去。</em></p>
+</li>
+<li><p>异步调用</p>
+<p>如果有异步调用之后再异步，可以用then中实现；</p>
+<p>多个实现后可以用promise.all()；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const promise1 = Promise.resolve(3);</span><br><span class="line">const promise2 = 42;</span><br><span class="line">const promise3 = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">  setTimeout(resolve, 100, &apos;foo&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Promise.all([promise1, promise2, promise3]).then((values) =&gt; &#123;</span><br><span class="line">  console.log(values);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//全部完成后结果返回存储在数据中：[3, 42, &quot;foo&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>竞争的方式可以promise.race()；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  setTimeout(resolve, <span class="number">500</span>, <span class="string">'one'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> promise2 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  setTimeout(resolve, <span class="number">100</span>, <span class="string">'two'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//竞争方式，谁先完成就可以执行</span></span><br><span class="line"><span class="built_in">Promise</span>.race([promise1, promise2]).then(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//two</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+        </div>
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+<div class="article-copyright hairline">
+  <p>
+    本作品采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a> 进行许可。
+  </p>
+</div>
+
+
+    
+
+    
+<nav class="article-nav">
+  
+    <a href="/2020/06/01/createApi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-title">
+        
+          API封装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/11/wx_request/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-title">小程序请求api</div>
+    </a>
+  
+</nav>
+
+
+    <section class="share">
+        <div class="share-title">分享</div>
+        <a class="share-item" target="_blank"
+            href="https://twitter.com/share?text=vue的学习细节 - KZ。&url=http://yoursite.com/2020/06/01/learnVue/">
+            <div class="n-icon n-icon-twitter"></div>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://www.facebook.com/sharer.php?title=vue的学习细节 - KZ。&u=http://yoursite.com/2020/06/01/learnVue/">
+            <div class="n-icon n-icon-facebook"></div>
+        </a>
+        <a class="share-item" target="_blank"
+            href="https://service.weibo.com/share/share.php?title=vue的学习细节 - KZ。&url=http://yoursite.com/2020/06/01/learnVue/&pic=">
+            <div class="n-icon n-icon-weibo"></div>
+        </a>
+    </section>
+
+</article>
+
+
+
+
+</div>
+        </section>
+      </section>
+      <aside class="sidebar">
+        <div class="widget">
+          
+
+  
+  <div class="widget-wrap">
+    <div class="widget-inner">
+      <div class="toc post-toc-html"></div>
+    </div>
+  </div>
+
+
+  
+  <div class="widget-wrap widget-cate">
+    <div class="widget-title"><span>Categories</span></div>
+    <div class="widget-inner">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/小工具/">小工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/vue/JavaScript/">JavaScript</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/微信小程序/">微信小程序</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/微信小程序-iTools-iTools说明书/">微信小程序 - iTools - iTools说明书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a></li></ul>
+    </div>
+  </div>
+
+
+
+  
+  <div class="widget-wrap">
+    <div class="widget-title"><span>Tags</span></div>
+    <div class="widget-inner">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序-iTools-iTools说明书/">微信小程序 - iTools - iTools说明书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐播放/">音乐播放</a></li></ul>
+    </div>
+  </div>
+
+
+
+  
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/13/iToolsPicture/">iTools小程序之单独边框</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/13/AudioContext/">AudioContext</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/13/2simpleFactory/">简单工厂模式</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/13/1singleton/">单例模式</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/01/createApi/">API封装</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li></ul>
+    </div>
+  </div>
+
+
+
+        </div>
+        <div id="backtop"><i class="icon icon-arrow-up"></i></div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-info">
+            <span>&copy; 2013 - 2020 KZ。</span>
+            
+
+
+
+
+
+
+
+
+
+
+  <a class="social" href="https://github.com/KevinJieZheng">
+    <span class="n-icon n-icon-github"></span>
+  </a>
+
+        </div>
+        <div class="footer-powered">
+            <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Aomori</a> Theme · Powered By Hexo
+        </div>
+    </div>
+</footer>
+
+
+
+<script src="/dist/build.js?1.2.0"></script>
+<script src="/dist/custom.js?1.2.0"></script>
+
+
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
