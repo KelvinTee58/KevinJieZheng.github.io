@@ -4,12 +4,12 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     
-    <title>Tag | node.js | KZ。</title>
+    <title>KZ。</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="KZ。">
-<meta property="og:url" content="http://yoursite.com/tags/node-js/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="KZ。">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -82,47 +82,68 @@
     <div class="main">
       <section class="inner">
         <section class="inner-main">
-          
-  
+          <div class="index">
   
     
+      <article
+  id="post-ArrayToString"
+  class="article article-type-post"
+>
+
+  <div class="article-inner">
     
+
+    <div class="article-body">
+      <header class="article-title">
+        <a href="/2019/12/30/ArrayToString/">Array to String</a>
+      </header>
+      <div class="article-entry post-inner-html">
+        
+          <h1 id="Array-to-String"><a href="#Array-to-String" class="headerlink" title="Array to String"></a>Array to String</h1><p>用于MySQL无法保存Array类型</p>
+<p>（1）Array 转换成 string </p>
+<p>​    输出发现中间有个逗号分隔符。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(aColors.toString());   <span class="comment">// output "red,green,blue";</span></span><br></pre></td></tr></table></figure>
+
+<p>   （2）string转换成Array</p>
+<p>​    Array转换成字符串，数组之间多了1个分隔符’,’ ,那么string转换成Array数组，必须要有分隔符才行。可以是逗号，也可以是其它分隔符。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sColors = <span class="string">"red,green,blue"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aColors = sColors.split(<span class="string">','</span>);   <span class="comment">// 字符串就转换成Array数组了。</span></span><br></pre></td></tr></table></figure>
+        
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="article-footer">
+    <div class="article-more-info">
+      <div class="article-date">
+  <time datetime="2019-12-30T13:30:44.000Z" itemprop="datePublished">2019-12-30</time>
+</div>
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
+        <div class="article-category">
+          <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/30/ArrayToString/">Array to String</a>
-    </h1>
-  
+      
+      
+        <div class="article-tag">
+          <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+        </div>
+      
+    </div>
+  </footer>
+
 
 </article>
-  
+
     
-    
-    <article class="archive-article archive-type-post">
-  
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/30/sequelize/">sequelize</a>
-    </h1>
   
 
-</article>
   
+    <nav class="pagination">
+      
+      <a class="extend prev" rel="prev" href="/">Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
   
-    </div></section>
-  
-
-
-
+</div>
 
         </section>
       </section>
